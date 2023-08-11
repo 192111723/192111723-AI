@@ -1,0 +1,39 @@
+planet(mercury, rocky, 57.9, 4879).
+planet(venus, rocky, 108.2, 12104).
+planet(earth, rocky, 149.6, 12742).
+planet(mars, rocky, 227.9, 6779).
+planet(jupiter, gas_giant, 778.5, 139822).
+planet(saturn, gas_giant, 1433.5, 116464).
+planet(uranus, ice_giant, 2872.5, 50724).
+planet(neptune, ice_giant, 4495.1, 49244).
+
+% Rules: Querying for information about planets.
+has_moons(Planet) :-
+    planet(Planet, _, _, _),
+    moon(Planet, _).
+
+moon(earth, moon).
+moon(mars, phobos).
+moon(mars, deimos).
+moon(jupiter, io).
+moon(jupiter, europa).
+moon(jupiter, ganymede).
+moon(jupiter, callisto).
+moon(saturn, titan).
+moon(saturn, enceladus).
+moon(uranus, titania).
+moon(uranus, oberon).
+moon(neptune, triton).
+
+% Rule: Checking if a planet is rocky.
+rocky_planet(Planet) :-
+    planet(Planet, rocky, _, _).
+
+% Rule: Checking if a planet is a gas giant.
+gas_giant_planet(Planet) :-
+    planet(Planet, gas_giant, _, _).
+
+% Rule: Checking if a planet is an ice giant.
+ice_giant_planet(Planet) :-
+    planet(Planet, ice_giant, _, _).
+This program defines a database of planets in our solar system along with their properties such as type, distance from the Sun, and diameter. It also includes information about moons of various planets. The rules defined allow you to query information about planets based on differ
